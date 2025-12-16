@@ -20,3 +20,4 @@ echo "<p><b>RAM:</b> $RAM</p>" >> "$OUT"
 echo "<p><b>Disk Doluluk:</b> $DISK</p>" >> "$OUT"
 echo "<p><b>Aktif Kullanıcı:</b> $USERS</p>" >> "$OUT"
 echo "</body></html>" >> "$OUT"
+
