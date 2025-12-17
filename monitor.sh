@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Çıktı dosyası
+# Çıktı dosyasi
 OUT="/var/www/html/index.html"
 
 # Tarih-saat
