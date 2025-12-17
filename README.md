@@ -1,13 +1,44 @@
 # Linux Server Dashboard
 
-Bu projede Linux sunucunun CPU, RAM, Disk ve aktif kullanıcı bilgileri
-bash scripti kullanılarak web sayfası üzerinde gösterilmektedir.
+Bu projede Linux sunucusunun temel sistem bilgileri (CPU, RAM, Disk ve aktif kullanıcı sayısı)  
+**Bash script** kullanılarak otomatik olarak toplanmış ve **Nginx** üzerinden web sayfası olarak gösterilmiştir.
+
+## Proje İçeriği
+
+- `monitor.sh`  
+  Sunucu bilgilerini toplayan ve HTML çıktısı üreten bash script.
+
+- `index.html`  
+  Script tarafından otomatik oluşturulan web arayüzü  
+  (`/var/www/html/index.html`).
+
+- `screenshot.png`  
+  Dashboard’un tarayıcıda çalışır hâlinin ekran görüntüsü.
 
 ## Kullanılan Teknolojiler
-- Linux
+
+- Linux (Ubuntu – WSL)
 - Bash
 - Nginx
 - Cron
 
-## Otomasyon
-monitor.sh scripti crontab ile her dakika çalışacak şekilde ayarlanmıştır.
+## Script Açıklaması
+
+`monitor.sh` scripti aşağıdaki bilgileri toplar:
+
+- Tarih ve saat
+- CPU kullanımı
+- RAM kullanımı
+- Disk doluluk oranı
+- Aktif kullanıcı sayısı
+
+Bu bilgiler her çalıştırmada HTML formatında `/var/www/html/index.html` dosyasına yazılır.
+
+## Otomasyon (Cron)
+
+Script, **cron** kullanılarak her dakika otomatik çalışacak şekilde ayarlanmıştır.
+
+Cron girdisi:
+
+```bash
+* * * * * /mnt/c/Users/Rümeysa/OneDrive/Belgeler/GitHub/linux-script-project-rumeysaklkrk/monitor.sh
