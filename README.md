@@ -1,3 +1,10 @@
+## ÖĞRENCİ BİLGİLERİ
+
+- **Ad Soyad:** Rümeysa Kolukırık 
+- **Öğrenci Numarası:** B231200006
+- **Ders:** Bilişim Sistemleri Altyapı ve Teknolojileri 
+
+
 # Linux Server Dashboard
 
 Bu projede Linux sunucusunun temel sistem bilgileri (CPU, RAM, Disk ve aktif kullanıcı sayısı)  
