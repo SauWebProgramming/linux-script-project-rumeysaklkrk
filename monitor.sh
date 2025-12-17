@@ -4,12 +4,12 @@ OUT="/var/www/html/index.html"
 
 TARIH="$(date)"
 CPU="$(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4}')"
-RAM="$(free -m | awk 'NR==2{print $3 " / " $2 " MB"}')"
+RAM="$(free -m | awk 'NR==2{print $3 " MB / " $2 " MB"}')"
 DISK="$(df -h / | awk 'NR==2{print $5}')"
 USERS="$(who | wc -l)"
 
 CPU_INT="$(printf "%.0f" "$CPU" 2>/dev/null)"
-if [ -z "$CPU_INT" ]; then CPU_INT=0; fi
+[ -z "$CPU_INT" ] && CPU_INT=0
 
 if [ "$CPU_INT" -ge 80 ]; then
   CPU_CLASS="danger"
@@ -31,12 +31,12 @@ body {
   background: #f4f6f8;
 }
 .card {
-  width: 400px;
-  margin: 50px auto;
+  width: 360px;
+  margin: 60px auto;
   background: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,.1);
 }
 h1 {
   text-align: center;
@@ -58,4 +58,3 @@ h1 {
 </body>
 </html>
 HTML
-
